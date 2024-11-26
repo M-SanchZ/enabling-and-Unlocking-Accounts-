@@ -30,29 +30,88 @@ This tutorial guides you through several common tasks in Active Directory, such 
 1. **Log in to DC-1**:  
    - Open **Remote Desktop Connection (RDP)** or use another method to log in to the **DC-1** machine.
 
-2. **Pick a random user account**:  
+2. **Pick a random user account**:
+   - We are logged in as  `jane_admin` on **DC-1** machine
    - Use a previously created user account in Active Directory (you may have created this during a previous lab).
+   - For this lab we use: `lak.kut` as a random user account
+     
+     ![image](https://github.com/user-attachments/assets/a235070e-c5e7-4a7a-9b0e-c2cb500e12d2)
+     ![image](https://github.com/user-attachments/assets/dd6f32f7-6021-40f1-9e8a-a81b9a4d04fa)
+     ![image](https://github.com/user-attachments/assets/6cba7368-53e5-4688-a29b-1ef4846df7a0)
 
-3. **Attempt to log in with the wrong password**:  
+
+
+
+4. **Attempt to log in with the wrong password**:  
    - Try to log in to the **Client-1** machine using the selected user account.
    - Enter the wrong password **10 times** to simulate failed login attempts.
+   - If you notice when you input the correct credentials for `lak.kut` you will be able to log in, this is due to Group policies not being Configure
+   - In the next step we will learn how to configure group polices to lock out accounts after various log in attemts.
 
 ### Step 3: Configure Group Policy to Lock Out the Account After 5 Attempts
 
 1. **Configure Account Lockout Threshold**:
-   - On **DC-1**, open the **Group Policy Management Console**.
+   - On **DC-1**, still logged in as  `jane_admin`, open the **Group Policy Management Console**.
      - Press **Win + R**, type `gpmc.msc`, and press **Enter**.
+       ![image](https://github.com/user-attachments/assets/8f9819ab-55da-4b51-9c11-cb78b2a6522a)
+       ![image](https://github.com/user-attachments/assets/94583726-12ca-4257-95d7-85d385182146)
+       ![image](https://github.com/user-attachments/assets/40aa66a0-6c34-4de0-99e7-a02fdde99b4c)
+
+
+
 
 2. **Edit the Default Domain Policy**:
    - In the Group Policy Management Console, navigate to **Forest > Domains > YourDomainName > Default Domain Policy**.
    - Right-click on **Default Domain Policy** and click **Edit**.
+     ![image](https://github.com/user-attachments/assets/624ff421-c612-431d-a46f-64b3030c9569)
+     ![image](https://github.com/user-attachments/assets/f5513892-e0b7-44a1-a91e-035b531a0e1c)
+     ![image](https://github.com/user-attachments/assets/0d73d90c-f838-49f2-ad9a-b2c6e6a9302d)
+
+
+
 
 3. **Configure Account Lockout Settings**:
    - Navigate to:  
      `Computer Configuration > Policies > Windows Settings > Security Settings > Account Policies > Account Lockout Policy`.
+     ![image](https://github.com/user-attachments/assets/997f8001-5e89-49ab-bca2-82d5447fd0c5)
+     ![image](https://github.com/user-attachments/assets/99871e2a-0340-4dd7-aff0-fe53db2337ac)
+     ![image](https://github.com/user-attachments/assets/2edfe3cd-df8c-49f8-b96c-cf4d8c114103)
+     ![image](https://github.com/user-attachments/assets/05041de9-bcd6-4dcb-89bf-7de9aff44080)
+     ![image](https://github.com/user-attachments/assets/67c89766-5d1c-4b97-892b-e36a8e379783)
+     ![image](https://github.com/user-attachments/assets/876204eb-e555-4edb-b6bf-1e403650effd)
+
+   - Double-click on **Account Lockout duration**.
+    ![image](https://github.com/user-attachments/assets/dc9f7330-385e-4820-b952-84b6e664911e)
+    ![image](https://github.com/user-attachments/assets/28d870be-7d80-4359-9fcb-1d7f27344295)
+    ![image](https://github.com/user-attachments/assets/12c0b8d0-0caf-428c-adf6-54fc25fdab8e)
+    ![image](https://github.com/user-attachments/assets/3c2de6ed-923a-480f-a202-b6315ae4fa0b)
+
+
+
+
    - Double-click on **Account Lockout Threshold**.
    - Set the value to **5 invalid logon attempts**.
    - Click **OK**.
+   ![image](https://github.com/user-attachments/assets/40d2117e-0dc8-4db5-9eb7-c1059e4cec18)
+   ![image](https://github.com/user-attachments/assets/1b775940-9e6b-4049-890b-5858e6bb62cc)
+   ![image](https://github.com/user-attachments/assets/3d6e247b-06e7-407a-a513-fa00b83f617d)
+   ![image](https://github.com/user-attachments/assets/3a169da4-3275-47c1-8138-88414acd0ed0)
+
+     - Checking if Domain Policies configuration after changes  **Default Domain Policy**.
+     ![image](https://github.com/user-attachments/assets/88e32c47-cd65-45ba-9b6f-f9320eb32988)
+
+
+   
+
+
+
+
+
+
+
+
+
+
 
 4. **Update Group Policy**:
    - Run `gpupdate /force` in the **Command Prompt** to apply the changes.
