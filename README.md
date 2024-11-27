@@ -142,6 +142,7 @@ This tutorial guides you through several common tasks in Active Directory, such 
 3. **Unlock the Account**:
    - Log into **DC-1** as `jane_admin` 
    - In **Active Directory Users and Computers**, right-click on the locked-out user account and select **Unlock Account**.
+   - If you can not locate the account user's name, right-click on 
      
 
 5. **Reset the password**:
@@ -175,7 +176,7 @@ This tutorial guides you through several common tasks in Active Directory, such 
    - Navigate to:  
      `Windows Logs > Security`
    - Here you can view various logs related to authentication and account lockouts.
-
+     
 2. **Observe Logs on the Client Machine**:
    - On **Client-1**, open **Event Viewer** by pressing **Win + R**, typing `eventvwr.msc`, and pressing **Enter**.
    - Navigate to:  
