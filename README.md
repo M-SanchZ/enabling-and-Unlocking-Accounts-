@@ -114,7 +114,18 @@ This tutorial guides you through several common tasks in Active Directory, such 
 
 
 4. **Update Group Policy**:
+   - Log in to **Client-1** as `jane_admin` to force accept the new policy.
+   - We could wait for it to auto apply after sometime, but for the sake of this lab we will force the policy update.
    - Run `gpupdate /force` in the **Command Prompt** to apply the changes.
+     
+     ![image](https://github.com/user-attachments/assets/482ab8ae-eb1a-4882-899a-f69d27a9309f)
+     ![image](https://github.com/user-attachments/assets/53b1011a-81c7-4f51-a080-3ed708452158)
+     ![image](https://github.com/user-attachments/assets/28d60ff2-3133-454c-aa43-fbbe8cf87b7b)
+     ![image](https://github.com/user-attachments/assets/a3158b25-930a-47ca-92a1-127e96c65270)
+
+
+
+
 
 ### Step 4: Test Account Lockout
 
@@ -125,15 +136,19 @@ This tutorial guides you through several common tasks in Active Directory, such 
    - After 5 failed login attempts, the account should now be locked out.
    - Go back to **DC-1** and open **Active Directory Users and Computers**.
    - Locate the user account and observe that it is marked as **locked out**.
+     ![image](https://github.com/user-attachments/assets/1bc8897e-43e8-457d-a3a3-90ee93f438f1)
+
 
 3. **Unlock the Account**:
+   - Log into **DC-1** as `jane_admin` 
    - In **Active Directory Users and Computers**, right-click on the locked-out user account and select **Unlock Account**.
+     
 
-4. **Reset the password**:
+5. **Reset the password**:
    - Right-click on the account again and select **Reset Password**.
    - Set a new password and click **OK**.
 
-5. **Attempt to log in**:
+6. **Attempt to log in**:
    - On **Client-1**, log in with the new password and confirm that you can access the account successfully.
 
 ### Step 5: Enabling and Disabling Accounts
