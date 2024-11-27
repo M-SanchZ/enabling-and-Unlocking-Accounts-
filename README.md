@@ -221,26 +221,26 @@ This tutorial guides you through several common tasks in Active Directory, such 
 
      
 2. **Observe Logs on the Client Machine**:
-   - We are logged in as `lak.kut` and will not be able to access Event Viewer, so we'll Open Event Viewer and run as administrator `jane_admin`
-   - As `jane_admin` 
+   - We are logged in as `lak.kut` and will not be able to access Event Viewer's Security tab, so we'll Open Event Viewer and run as administrator
+   - As an Admin user input `jane_admin` log in information 
    - On **Client-1**, open **Event Viewer** by pressing **Win + R**, typing `eventvwr.msc`, and pressing **Enter**.
    - Navigate to:  
      `Windows Logs > Security`
    - Review the logs related to login attempts and account status.
      ![image](https://github.com/user-attachments/assets/fafbfda0-458a-4c46-9671-c06565eb18db)
+     ![image](https://github.com/user-attachments/assets/256078d6-4d30-4bc4-9f19-fd385fa208d8)
+     ![image](https://github.com/user-attachments/assets/34df8f67-25f6-4995-8bce-0d713d324b16)
+
+
 
 
 ### Step 7: Clean-Up and Conclusion
 
 - **Finish the Lab**: Ensure you’ve completed all the steps, including logging out and saving any necessary changes.
-- **Do not delete the VMs** in Azure as we will use them for upcoming labs.
 - **Save Money**: If you are done for the day, go to the **Azure Portal** and stop the **DC-1** and **Client-1** VMs to save costs. 
    - Navigate to **Virtual Machines**, click on each VM, and click **Stop**.
 
 ---
 
-## Additional Resources:
-- [How to Configure Account Lockout Threshold in Group Policy](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/account-lockout-threshold)
-- [Precursor to Cybersecurity and Security Operations](https://joshmadakor.tech/cyber)
 
 ---
