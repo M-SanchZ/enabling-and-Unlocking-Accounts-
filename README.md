@@ -142,28 +142,68 @@ This tutorial guides you through several common tasks in Active Directory, such 
 3. **Unlock the Account**:
    - Log into **DC-1** as `jane_admin` 
    - In **Active Directory Users and Computers**, right-click on the locked-out user account and select **Unlock Account**.
-   - If you can not locate the account user's name, right-click on 
+   - If you can not locate the account user's name, right-click on `mydomain.com`  and click on FIND
+   - Check the box that reads  **Unlock account** and APPLY changes before clicking Ok
+     
+     ![image](https://github.com/user-attachments/assets/e03c35cc-63a1-4206-ab99-1abe3af9c62c)
+     ![image](https://github.com/user-attachments/assets/c21a3ce6-2008-4c2b-9edc-1904917cbec8)
+     ![image](https://github.com/user-attachments/assets/1654f3ea-296d-41d7-a888-7d85b7f2b906)
+     ![image](https://github.com/user-attachments/assets/275d0222-bada-4ec3-b2f8-5c36e28ef6fa)
+     ![image](https://github.com/user-attachments/assets/a7cfaa31-1989-4d6a-b5e5-1b840697a2ee)
+     ![image](https://github.com/user-attachments/assets/ec3bd41d-5dda-49ce-bf45-5aa2cd04faac)
+
+
+
+
+
+
      
 
 5. **Reset the password**:
    - Right-click on the account again and select **Reset Password**.
    - Set a new password and click **OK**.
+     ![image](https://github.com/user-attachments/assets/f5cc2c3a-db0d-4311-a713-f1e84b6be04f)
+     ![image](https://github.com/user-attachments/assets/fe7d2c64-c95f-4a6b-a77c-a685d1bd7a66)
+     ![image](https://github.com/user-attachments/assets/d385d378-c5cc-408c-9cb9-710a5e07b366)
+     ![image](https://github.com/user-attachments/assets/08a05410-e193-47cb-bb91-fef8e2e4c913)
+
+
+
+
 
 6. **Attempt to log in**:
    - On **Client-1**, log in with the new password and confirm that you can access the account successfully.
+     ![image](https://github.com/user-attachments/assets/27bd61ef-3a43-4e1f-9034-ec09221fb9f4)
+     ![image](https://github.com/user-attachments/assets/d8e0e923-cffb-42bb-9dbf-8ce6db65ff2e)
+
+
+     
 
 ### Step 5: Enabling and Disabling Accounts
 
 1. **Disable the Account**:
    - On **DC-1**, go to **Active Directory Users and Computers**.
    - Right-click on the same user account and select **Disable Account**.
+     ![image](https://github.com/user-attachments/assets/0daffa12-b06c-46c5-91b9-837a528a6800)
+     ![image](https://github.com/user-attachments/assets/b2a044d7-4b75-4034-8f06-8ed51cdc7f42)
+
+
+     
 
 2. **Attempt to log in**:
    - On **Client-1**, attempt to log in with the disabled account.
    - You should see an error message that indicates the account is disabled.
+     ![image](https://github.com/user-attachments/assets/49cd316f-a21c-4c7c-b7d9-084fe1a1bb92)
+     ![image](https://github.com/user-attachments/assets/46d62b7e-7585-47ad-9b31-06fdc583310a)
+
+
 
 3. **Re-enable the Account**:
    - On **DC-1**, right-click on the disabled user account and select **Enable Account**.
+     ![image](https://github.com/user-attachments/assets/36be3b7d-6748-4321-97a1-a166a22ae029)
+     ![image](https://github.com/user-attachments/assets/d5015ef7-c4ef-4354-9e06-41a4620ce4c1)
+
+
 
 4. **Attempt to log in**:
    - On **Client-1**, attempt to log in with the re-enabled account.
@@ -177,11 +217,18 @@ This tutorial guides you through several common tasks in Active Directory, such 
      `Windows Logs > Security`
    - Here you can view various logs related to authentication and account lockouts.
      
+     ![image](https://github.com/user-attachments/assets/ec4e21cf-aa53-49a7-bc04-18f984dbea7c)
+
+     
 2. **Observe Logs on the Client Machine**:
+   - We are logged in as `lak.kut` and will not be able to access Event Viewer, so we'll Open Event Viewer and run as administrator `jane_admin`
+   - As `jane_admin` 
    - On **Client-1**, open **Event Viewer** by pressing **Win + R**, typing `eventvwr.msc`, and pressing **Enter**.
    - Navigate to:  
      `Windows Logs > Security`
    - Review the logs related to login attempts and account status.
+     ![image](https://github.com/user-attachments/assets/fafbfda0-458a-4c46-9671-c06565eb18db)
+
 
 ### Step 7: Clean-Up and Conclusion
 
